@@ -27,13 +27,14 @@
 </head>
 
 <body>
+    <main id="root">
     <div class="d-flex justify-content-center mt-5">
         <div class="box d-flex">
             <div class="col-4 border-end border-2">
                 <div class="top d-flex justify-content-between align-items-center">
                     <div class="col-6 px-2 d-flex align-items-center">
-                        <img src="./img/avatar_2.jpg" alt="Avatar 2">
-                        <span class="mx-2">Manuel</span>
+                        <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
+                        <span class="mx-2">{{ user.name }}</span>
                     </div>
                     <div class="col-2 px-2 d-flex justify-content-between text-end">
                         <i class="fa-solid fa-circle-notch fa-lg"></i>
@@ -57,48 +58,13 @@
                     <input type="text" class="form-control " placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="message">
-                    <div class="col-12 d-flex border-bottom border-1">
+                    <div v-for="contact in contacts" class="col-12 d-flex border-bottom border-1">
                         <div class="p-2 mx-2">
-                        <img src="./img/avatar_1.jpg" alt="Avatar 1">
-                        <span class="mx-2">Michele</span>
+                            <img :src="`img/avatar${contact.avatar}.jpg`" alt="contact.name">
+                            <span class="mx-2">{{ contact.name }}</span>
                         </div>
                     </div>
-                    <div class="col-12 d-flex border-bottom border-1">
-                        <div class="p-2 mx-2">
-                        <img src="./img/avatar_3.jpg" alt="Avatar 3">
-                        <span class="mx-2">Giovanni</span>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex border-bottom border-1">
-                        <div class="p-2 mx-2">
-                        <img src="./img/avatar_4.jpg" alt="Avatar 4">
-                        <span class="mx-2">Alex</span>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex border-bottom border-1">
-                        <div class="p-2 mx-2">
-                        <img src="./img/avatar_5.jpg" alt="Avatar 5">
-                        <span class="mx-2">Davide</span>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex border-bottom border-1">
-                        <div class="p-2 mx-2">
-                        <img src="./img/avatar_6.jpg" alt="Avatar 6">
-                        <span class="mx-2">Alessia</span>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex border-bottom border-1">
-                        <div class="p-2 mx-2">
-                        <img src="./img/avatar_7.jpg" alt="Avatar 7">
-                        <span class="mx-2">Tom</span>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex border-bottom border-1">
-                        <div class="p-2 mx-2">
-                        <img src="./img/avatar_8.jpg" alt="Avatar 8">
-                        <span class="mx-2">U' Boss</span>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <div class="col-8 border-start border-2">
@@ -159,6 +125,7 @@
             </div>
         </div>
     </div>
+</main>
     <script src="js/script.js"></script>
 </body>
 
