@@ -42,9 +42,25 @@ const root = new Vue({
                 avatar: '_3',
             },
             {
-                name: 'Luisa',
+                name: 'Jack',
                 avatar: '_4',
             },
+            {
+                name: "Tom",
+                avatar: "_5",
+              },
+              {
+                name: "Alessia",
+                avatar: "_6",
+              },
+              {
+                name: "Davide",
+                avatar: "_7",
+              },
+              {
+                name: "U' Boss",
+                avatar: "_8",
+              },
         ]
     },
     computed: {
