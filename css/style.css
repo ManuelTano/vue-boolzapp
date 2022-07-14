@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    background:linear-gradient(to bottom, #009688 18%, #D7DBD7 18% 100%);
+    background: linear-gradient(to bottom, #009688 18%, #D7DBD7 18% 100%);
     overflow: hidden;
 }
 
@@ -19,7 +19,6 @@ body {
     height: 100px;
     background-color: #8EDAFC;
     cursor: pointer;
-
 }
 
 .chat {
@@ -27,6 +26,8 @@ body {
     width: 100%;
     height: 685px;
     background-size: contain;
+    overflow-y: scroll;
+
 }
 
 .bottom {
@@ -45,7 +46,7 @@ img {
 }
 
 .fa-solid {
-    color: grey;
+    color: #B1B1B1;
     cursor: pointer;
 }
 
@@ -58,4 +59,20 @@ img {
 
 .grey {
     color: grey;
+}
+
+.azure {
+    color: #8EDAFC;
+}
+
+.message {
+    overflow-y: scroll;
+}
+
+.green {
+    background-color: #D5F9BA;
+}
+
+.contenitore {
+    width: 80%;
 }
