@@ -76,3 +76,8 @@ img {
 .contenitore {
     width: 80%;
 }
+
+.data {
+    font-size: 12px;
+    margin-bottom: 0px;
+}
