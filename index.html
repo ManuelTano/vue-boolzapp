@@ -76,8 +76,9 @@
                     <!-- LISTA CONTATTI -->
 
                     <div class="message">
-                        <div v-for="(contact, index) in contacts" class="col-12 d-flex border-bottom border-1" @click="setCurrentContact(index)">
-                            <div class="p-2 mx-2" >
+                        <div v-for="(contact, index) in contacts" class="col-12 d-flex border-bottom border-1"
+                            @click="setCurrentContact(index)">
+                            <div class="p-2 mx-2">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="contact.name">
                                 <span class="mx-2">{{ contact.name }}</span>
                             </div>
@@ -92,7 +93,7 @@
 
                         <!-- BARRA DESTINATARIO + ICONE -->
 
-                        <div v-for="(contact, index) in contacts" v-if="currentIndex === index" 
+                        <div v-for="(contact, index) in contacts" v-if="currentIndex === index"
                             class="col-6 px-2 d-flex align-items-center">
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="contact.name">
                             <div class="title mx-2">
@@ -109,40 +110,39 @@
 
                     <!-- CHAT BOX -->
 
-                    <div class="chat d-flex justify-content-center ">
+                    <div class="chat d-flex justify-content-center">
                         <div class="contenitore mt-5">
-                            <div class="row mt-4 flex-column align-items-end ">
-                                <div v-for="(message, index) in contacts[currentIndex].messages"
-                                    v-if="message.status === 'sent'"
-                                    class="col-5 green rounded-3 mt-3 shadow ">
-                                    <div class="p-2">
-                                        <div>{{ message.text }}</div>
-                                        <p class="text-end data grey">{{ message.date }}</p>
+                            <div class="row mt-4 ">
+                                <div v-for="(message, index) in contacts[currentIndex].messages">
+                                    <div v-if="message.status === 'sent'" 
+                                    class="col-5 offset-7 green rounded-3 mt-3 shadow ">
+                                        <div class="p-2">
+                                            <div>{{ message.text }}</div>
+                                            <p class="text-end data grey">{{ message.date }}</p>
+                                        </div>
+                                    </div>
+                                    <div v-if="message.status === 'received'">
+                                            <div class="col-5 bg-white rounded-3 mt-3 shadow ">
+                                                <div class="p-2">
+                                                    <div>{{ message.text }}</div>
+                                                    <p class="text-end data grey">{{ message.date }}</p>
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-4 flex-column ">
-                                <div v-for="(message, index) in contacts[currentIndex].messages"
-                                    v-if="message.status === 'received'"
-                                    class="col-5 bg-white rounded-3 mt-3 shadow ">
-                                    <div class="p-2">
-                                        <div>{{ message.text }}</div>
-                                        <p class="text-end data grey">{{ message.date }}</p>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
+                    </div>
 
                         <!-- BARRA INVIO MESSAGGIO + ICONE -->
 
-                    </div>
                     <div class="bottom d-flex justify-content-center align-items-center">
                         <div class="col-1 d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-face-grin fa-lg"></i>
                         </div>
                         <div class="col-10">
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio..">
+                            <input v-model="newMessage" type="text" class="form-control"
+                                placeholder="Scrivi un messaggio..">
                         </div>
                         <div class="col-1 d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-microphone fa-lg"></i>
