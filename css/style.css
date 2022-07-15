@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    background: linear-gradient(to bottom, #009688 18%, #D7DBD7 18% 100%);
+    background-image: linear-gradient(to bottom, #009688 18%, #D7DBD7 18% 100%);
     overflow: hidden;
 }
 
@@ -8,6 +8,8 @@ body {
     width: 1500px;
     height: 825px;
     background-color: white;
+    box-shadow: 10px 10px 20px #666666;
+
 }
 
 .top {
@@ -65,7 +67,12 @@ img {
     color: #8EDAFC;
 }
 
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
 .message {
+    max-height: 600px;
     overflow-y: scroll;
 }
 
