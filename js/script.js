@@ -28,6 +28,7 @@ const root = new Vue({
             name: "Manuela",
             avatar: "_io",
         },
+        currentIndex: 0,
         contacts: [
             {
               name: 'Michele',
