@@ -76,8 +76,8 @@
                     <!-- LISTA CONTATTI -->
 
                     <div class="message">
-                        <div v-for="(contact, index) in contacts" class="col-12 d-flex border-bottom border-1">
-                            <div class="p-2 mx-2">
+                        <div v-for="(contact, index) in contacts" class="col-12 d-flex border-bottom border-1" @click="setCurrentContact(index)">
+                            <div class="p-2 mx-2" >
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="contact.name">
                                 <span class="mx-2">{{ contact.name }}</span>
                             </div>
@@ -92,10 +92,11 @@
 
                         <!-- BARRA DESTINATARIO + ICONE -->
 
-                        <div class="col-6 px-2 d-flex align-items-center">
-                            <img src="./img/avatar_1.jpg" alt="">
+                        <div v-for="(contact, index) in contacts" v-if="currentIndex === index" 
+                            class="col-6 px-2 d-flex align-items-center">
+                            <img :src="`img/avatar${contact.avatar}.jpg`" alt="contact.name">
                             <div class="title mx-2">
-                                <span>Michele</span><br>
+                                <span>{{ contact.name }}</span><br>
                                 <span class="grey">Ultimo accesso oggi alle </span>
                             </div>
                         </div>
@@ -111,7 +112,7 @@
                     <div class="chat d-flex justify-content-center ">
                         <div class="contenitore mt-5">
                             <div class="row mt-4 flex-column align-items-end ">
-                                <div v-for="message in contacts[currentIndex].messages"
+                                <div v-for="(message, index) in contacts[currentIndex].messages"
                                     v-if="message.status === 'sent'"
                                     class="col-5 green rounded-3 mt-3 shadow ">
                                     <div class="p-2">
@@ -121,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="row mt-4 flex-column ">
-                                <div v-for="message in contacts[currentIndex].messages"
+                                <div v-for="(message, index) in contacts[currentIndex].messages"
                                     v-if="message.status === 'received'"
                                     class="col-5 bg-white rounded-3 mt-3 shadow ">
                                     <div class="p-2">

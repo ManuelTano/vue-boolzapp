@@ -68,7 +68,7 @@ const root = new Vue({
               {
                 date: '16/07/2022 16:35:00',
                 text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                status: 'received'
+                status: 'sent'
               }
               ],
             },
@@ -273,7 +273,9 @@ const root = new Vue({
 
             },
             methods: {
-
+                setCurrentContact(index) {
+                    this.currentIndex = index;
+                }
             }
 });
 

@@ -74,6 +74,7 @@ img {
 .message {
     max-height: 600px;
     overflow-y: scroll;
+    cursor: pointer;
 }
 
 .green {
