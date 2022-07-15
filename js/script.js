@@ -277,13 +277,13 @@ const root = new Vue({
         setCurrentContact(index) {
             this.currentIndex = index;
         },
-        sendMessage() {
+        sendReceiveMessage() {
+
             const myMessage = {
                 date: "17/07/2022 17:30:55",
                 text: this.newMessage,
                 status: "sent",
             };
-
             const yoursMessage = {
                 date: "17/07/2022 17:30:55",
                 text: 'Okay!',
@@ -291,9 +291,15 @@ const root = new Vue({
             }
 
             this.contacts[this.currentIndex].messages.push(myMessage);
-        }
+            this.newMessage = '';
+
+            setTimeout(() => {
+                this.contacts[this.currentIndex].messages.push(yoursMessage)
+            }, 2000);
+        },
+        },
     }
-});
+);
 
 
 
