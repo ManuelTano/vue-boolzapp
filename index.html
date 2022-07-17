@@ -70,13 +70,13 @@
 
                     <div class="search p-2 d-flex justify-content-center align-items-center">
                         <i class="fa-solid fa-magnifying-glass fa-lg mx-2"></i>
-                        <input type="text" class="form-control " placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="searchContacts" type="text" class="form-control " placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                     <!-- LISTA CONTATTI -->
 
                     <div class="message">
-                        <div v-for="(contact, index) in contacts" class="col-12 d-flex border-bottom border-1"
+                        <div v-for="(contact, index) in contacts" v-if="researchContact(contact)"  class="col-12 d-flex border-bottom border-1"
                             @click="setCurrentContact(index)">
                             <div class="p-2 mx-2">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="contact.name">

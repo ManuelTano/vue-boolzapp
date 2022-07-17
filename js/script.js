@@ -25,11 +25,12 @@ const root = new Vue({
     el: '#root',
     data: {
         user: {
-            name: "Manuela",
-            avatar: "_io",
+            name: "Manuel",
+            avatar: "_2",
         },
         currentIndex: 0,
         newMessage: '',
+        searchContacts: '',
         contacts: [
             {
                 name: 'Michele',
@@ -297,6 +298,13 @@ const root = new Vue({
                 this.contacts[this.currentIndex].messages.push(yoursMessage)
             }, 2000);
         },
+        researchContact: function (contact) {
+            if (this.searchContacts == "") {
+                return true;
+            }
+            return contact.name.toLowerCase().startsWith(this.searchContacts.toLowerCase());
+        }
+
         },
     }
 );
