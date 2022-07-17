@@ -76,8 +76,8 @@
                     <!-- LISTA CONTATTI -->
 
                     <div class="message">
-                        <div v-for="(contact, index) in contacts" v-if="researchContact(contact)"  class="col-12 d-flex border-bottom border-1"
-                            @click="setCurrentContact(index)">
+                        <div v-for="(contact, index) in contacts"   class="col-12 d-flex border-bottom border-1"
+                            @click="setCurrentContact(index)" v-if="contact.name.toLowerCase().startsWith(searchContacts)">
                             <div class="p-2 mx-2">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="contact.name">
                                 <span class="mx-2">{{ contact.name }}</span>
