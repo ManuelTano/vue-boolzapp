@@ -298,6 +298,9 @@ const root = new Vue({
                 this.contacts[this.currentIndex].messages.push(yoursMessage)
             }, 2000);
         },
+        removeMessage (index) {
+            this.contacts[this.currentIndex].messages.splice(index, 1);
+        }
         
         },
     }

@@ -70,14 +70,16 @@
 
                     <div class="search p-2 d-flex justify-content-center align-items-center">
                         <i class="fa-solid fa-magnifying-glass fa-lg mx-2"></i>
-                        <input v-model="searchContacts" type="text" class="form-control " placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="searchContacts" type="text" class="form-control "
+                            placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                     <!-- LISTA CONTATTI -->
 
                     <div class="message">
-                        <div v-for="(contact, index) in contacts"   class="col-12 d-flex border-bottom border-1"
-                            @click="setCurrentContact(index)" v-if="contact.name.toLowerCase().startsWith(searchContacts)">
+                        <div v-for="(contact, index) in contacts" class="col-12 d-flex border-bottom border-1"
+                            @click="setCurrentContact(index)"
+                            v-if="contact.name.toLowerCase().startsWith(searchContacts)">
                             <div class="p-2 mx-2">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="contact.name">
                                 <span class="mx-2">{{ contact.name }}</span>
@@ -114,27 +116,31 @@
                         <div class="contenitore mt-5">
                             <div class="row mt-4 ">
                                 <div v-for="(message, index) in contacts[currentIndex].messages">
-                                    <div v-if="message.status === 'sent'" 
-                                    class="col-5 offset-7 green rounded-3 mt-3 shadow ">
+                                    <div v-if="message.status === 'sent'"
+                                        class="col-5 offset-7 green rounded-3 mt-3 shadow position-relative">
                                         <div class="p-2">
                                             <div>{{ message.text }}</div>
+                                            <i class="fa-solid fa-chevron-down position-absolute">
+                                                
+                                            </i>
                                             <p class="text-end data grey">{{ message.date }}</p>
                                         </div>
                                     </div>
                                     <div v-if="message.status === 'received'">
-                                            <div class="col-5 bg-white rounded-3 mt-3 shadow ">
-                                                <div class="p-2">
-                                                    <div>{{ message.text }}</div>
-                                                    <p class="text-end data grey">{{ message.date }}</p>
-                                                </div>
+                                        <div class="col-5 bg-white rounded-3 mt-3 shadow position-relative">
+                                            <div class="p-2">
+                                                <div>{{ message.text }}</div>
+                                                <i class="fa-solid fa-chevron-down position-absolute"></i>
+                                                <p class="text-end data grey">{{ message.date }}</p>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                        <!-- BARRA INVIO MESSAGGIO + ICONE -->
+                    <!-- BARRA INVIO MESSAGGIO + ICONE -->
 
                     <div class="bottom d-flex justify-content-center align-items-center">
                         <div class="col-1 d-flex justify-content-center align-items-center">

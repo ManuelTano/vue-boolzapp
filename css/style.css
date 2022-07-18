@@ -90,3 +90,8 @@ img {
     margin-bottom: 0px;
 }
 
+.fa-chevron-down {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
